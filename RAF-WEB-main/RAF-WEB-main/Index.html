@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Webpage Design</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Rap Web</h2>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input type="search" name="" placeholder="Type to search">
+                <button class="btn">Search</button>
+            </div>
+        </div>
+        <div class="content">
+            <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rem unde molestias dolore iusto distinctio ipsa natus, aspernatur est vel, accusantium eligendi nihil obcaecati sapiente excepturi, nulla dolorem. Dolor, nostrum!</p>
+            <button class="cn"><a href="#">JOIN US</a></button>
+        </div>
+    </div>
+    <div class="container">
+        <p class="text">Welcome to Rap Web</p>
+    </div>
+    <script>
+        // Get the navigation links
+        const homeLink = document.getElementById('home');
+        const aboutLink = document.getElementById('about');
+        const servicesLink = document.getElementById('services');
+        const contactLink = document.getElementById('contact');
+
+        // Get the search input and button
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+
+        // Add event listeners to the navigation links
+        homeLink.addEventListener('click', () => {
+            // Handle home link click
+            console.log('Home link clicked');
+        });
+
+        aboutLink.addEventListener('click', () => {
+            // Handle about link click
+            console.log('About link clicked');
+        });
+
+        servicesLink.addEventListener('click', () => {
+            // Handle services link click
+            console.log('Services link clicked');
+        });
+
+        contactLink.addEventListener('click', () => {
+            // Handle contact link click
+            console.log('Contact link clicked');
+        });
+
+        // Add event listener to the search button
+        searchBtn.addEventListener('click', () => {
+            // Handle search button click
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                console.log(`Searching for: ${searchTerm}`);
+                // You can add your search logic here
+            } else {
+                console.log('Please enter a search term');
+            }
+        });
+    </script>
+
+</body>
+</html>
