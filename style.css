@@ -1,169 +1,242 @@
-*{
+/* Global styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-
-}
-.main{
-   width: 100px;
-   background: url(Images/Night\ sky.avif);
-   background-position: center;
-   background-size: cover;
-   height: 109vh; 
-   width: 200vh;
-}
-
-.navbar{
-    width: 1200px;
-    height: 75px;
-    margin: auto;
-}
-
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-
-
-}
-
-.logo{
-    color: #ff7200;
-    font-size: 35px;
-    font-family: arial;
-    padding-left: 20px;
-    float:left;
-    padding-top: 10px;
-
-}
-
-.menu{
-    width: 400px;
-    float: left;
-    height: 70px;
-}
-
-ul{
-    float: left;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-ul li{
-    list-style: none;
-    margin-left: 62px;
-    margin-top: 27px;
-    font-size: 14px;
-}
-
-ul li a{
-    text-decoration: none;
-    color: white;
-    font-family: arial;
-    font-weight: bold;
-    transition: 0.4s ease-in-out;
-}
-
-ul li a:hover{
-    color: #ff7200;
-}
-
-.search{
-    width: 400px;
-    float: left;
-    height: 70px;
-    margin-left: 270px;
-}
-
-.srch{
-    font-family: 'Times New Roman';
-    font-size: 200px;
-    height: 40px;
-    background: transparent;
-    border: 1px #ff7200;
-    margin-top: 13px;
-    color: white;
-    border-right: none;
-    font-size: 16px;
-    float:left;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  .main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar {
+    background-color: #333;
+    color: #fff;
     padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
-}
-
-.btn{
-    width: 100px;
-    height: 40px;
-    background: #ff7200;
-    border:2px solid #ff7200;
-    margin-top: 13px;
-    color: rgb(237, 237, 237);
-    font-size: 15px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    
-}
-
-.btn:focus{
-    outline: none;
-}
-
-.src:focus{
-    outline: none;
-}
-
-.content{
-    width: 1200px;
-    height: auto;
-    margin: auto;
-    color: #fdf7f7;
-    position: relative;
-}
-
-.content .par{
-    padding-left: 20px;
-    padding-bottom: 20px;
-    font-family: Arial;
-    letter-spacing: 1.2px;
-    line-height: 30px;
-
-}
-
-.content .h1{
-    font-family: 'Times New Roman';
-    font-size: 50px;
-    padding-left: 20;
-    margin-top: 9%;
-    letter-spacing: 2px;
-}
-.content .cn{
-    background-color: rgb(209, 115, 27);
-    width: 4.5%;
-    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .icon {
+    margin-right: 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .menu a:hover {
+    color: #ccc;
+  }
+  
+  .search {
+    margin-left: 20px;
+  }
+  
+  .search input[type="search"] {
+    padding: 10px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 5px;
-    position: absolute;
-   
-}
-
-.container{
-    display: inline-block;
-    margin: 20%;
-
-}
- .container .text{
-    overflow: hidden;
-    font-size: 3.6rem;
-    font-weight: 700;
-    border-right: 0.15em solid orange;
-    white-space: nowrap;
-}
-@keyframes typing {
-    from{
-        width: 0;
+    width: 200px;
+  }
+  
+  .search button[type="button"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .search button[type="button"]:hover {
+    background-color: #444;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .par {
+    margin-bottom: 20px;
+  }
+  
+  .cn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cn:hover {
+    background-color: #444;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Media queries */
+  
+  /* Mobile (max-width: 480px) */
+  @media only screen and (max-width: 480px) {
+    .main {
+      margin: 20px;
+      padding: 10px;
     }
-    to {
-        width: 100%;
+    .navbar {
+      flex-direction: column;
+      align-items: center;
     }
-    
-}
+    .menu {
+      flex-direction: column;
+    }
+    .menu li {
+      margin-right: 0;
+    }
+    .search {
+      margin-left: 0;
+    }
+    .search input[type="search"] {
+      width: 100%;
+    }
+    .content {
+      padding: 10px;
+    }
+    .par {
+      font-size: 16px;
+    }
+    .cn {
+      padding: 10px;
+    }
+    .container {
+      padding: 10px;
+    }
+    .text {
+      font-size: 18px;
+    }
+  }
+  
+  /* Tablet (max-width: 768px) */
+  @media only screen and (max-width: 768px) {
+    .main {
+      margin: 30px;
+      padding: 15px;
+    }
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .menu {
+      flex-direction: row;
+    }
+    .menu li {
+      margin-right: 10px;
+    }
+    .search {
+      margin-left: 10px;
+    }
+    .search input[type="search"] {
+      width: 150px;
+    }
+    .content {
+      padding: 15px;
+    }
+    .par {
+      font-size: 18px;
+    }
+    .cn {
+      padding: 15px;
+    }
+    .container {
+      padding: 15px;
+    }
+    .text {
+      font-size: 20px;
+    }
+  }
+  
+  /* Desktop (min-width: 769px) */
+  @media only screen and (min-width: 769px) {
+    .main {
+      margin: 40px;
+      padding: 20px;
+    }
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .menu {
+      flex-direction: row;
+    }
+    .menu li {
+      margin-right: 20px;
+    }
+    .search {
+      margin-left: 20px;
+    }
+    .search input[type="search"] {
+      width: 200px;
+    }
+    .content {
+      padding: 20px;
+    }
+    .par {
+      font-size: 20px;
+    }
+    .cn {
+      padding: 20px;
+    }
+    .container {
+      padding: 20px;
+    }
+    .text {
+      font-size: 24px;
+    }
+  }
