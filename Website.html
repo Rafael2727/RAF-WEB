@@ -1,80 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Webpage Design</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Design with Vue</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        section {
+            padding: 100px;
+            height: 100vh;
+            border-bottom: 1px solid #979696;
+        }
+    </style>
 </head>
 <body>
-    <div class="main">
+    <div id="app">
+        <!-- Navigation Bar -->
         <div class="navbar">
             <div class="icon">
                 <h2 class="logo">Rap Web</h2>
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home" @click="scrollToSection('home')">Home</a></li>
+                    <li><a href="#about" @click="scrollToSection('about')">About</a></li>
+                    <li><a href="#projects" @click="scrollToSection('projects')">Projects</a></li>
+                    <li><a href="#contact" @click="scrollToSection('contact')">Contact</a></li>
                 </ul>
             </div>
             <div class="search">
-                <input type="search" name="" placeholder="Type to search">
-                <button class="btn">Search</button>
+                <input type="search" v-model="searchTerm" placeholder="Type to search">
+                <button @click="handleSearch" class="btn">Search</button>
             </div>
         </div>
-        <div class="content">
-            <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime rem unde molestias dolore iusto distinctio ipsa natus, aspernatur est vel, accusantium eligendi nihil obcaecati sapiente excepturi, nulla dolorem. Dolor, nostrum!</p>
-            <button class="cn"><a href="#">JOIN US</a></button>
-        </div>
-    </div>
-    <div class="container">
-        <p class="text">Welcome to Rap Web</p>
-    </div>
+        
+
+        <!-- Sections to navigate to -->
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to my Portfolio Web, I'm a former beginner to programming<br> striving for improvements in my coding.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi! I'm <b>Rafael L. Batnag Jr.</b><br>
+               1st year <b>BSIT-1A</b><br>
+               Born on <b>January 27, 2006</b><br>
+               <b>18</b> years old, from <b>MASINLOC ZAMBALES</b><br>
+               Currently living in <b>SINABACAN CANDELARIA</b><br><br>
+               Currently learning front-end <b>HTML, CSS, JavaScript</b><br>
+            </p>
+        </section>
+        
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>This is my projects. <a href="projects/loginpage.html">Login Page</a>
+            <a href="projects/Modified Calculator.html">Modified Calculator</a> <a href="projects/Dateme.html">Date me</a> <a href="projects/Birthday Cake.html">Birthday Cake</a></p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Section</h2>
+            <p>Contact me with my Social Media Account</p>
+            <footer>
+                <h3>Connect with me:</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/rafael.batnag.7" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/rafael_batnag/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.github.com/Rafael2727" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.tiktok.com/@rafael_2.27" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+                    </a>
+                </div>
+            </footer>
+            
+              
+    
+
+    <!-- Vue.js Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script>
-        // Get the navigation links
-        const homeLink = document.getElementById('home');
-        const aboutLink = document.getElementById('about');
-        const servicesLink = document.getElementById('services');
-        const contactLink = document.getElementById('contact');
-
-        // Get the search input and button
-        const searchInput = document.getElementById('search-input');
-        const searchBtn = document.getElementById('search-btn');
-
-        // Add event listeners to the navigation links
-        homeLink.addEventListener('click', () => {
-            // Handle home link click
-            console.log('Home link clicked');
-        });
-
-        aboutLink.addEventListener('click', () => {
-            // Handle about link click
-            console.log('About link clicked');
-        });
-
-        servicesLink.addEventListener('click', () => {
-            // Handle services link click
-            console.log('Services link clicked');
-        });
-
-        contactLink.addEventListener('click', () => {
-            // Handle contact link click
-            console.log('Contact link clicked');
-        });
-
-        // Add event listener to the search button
-        searchBtn.addEventListener('click', () => {
-            // Handle search button click
-            const searchTerm = searchInput.value.trim();
-            if (searchTerm) {
-                console.log(`Searching for: ${searchTerm}`);
-                // You can add your search logic here
-            } else {
-                console.log('Please enter a search term');
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    searchTerm: ''
+                }
+            },
+            methods: {
+                scrollToSection(sectionId) {
+                    const section = document.getElementById(sectionId);
+                    if (section) {
+                        section.scrollIntoView({ behavior: 'smooth' });
+                    }
+                },
+                handleSearch() {
+                    const term = this.searchTerm.toLowerCase().trim();
+                    if (term) {
+                        // Check if search term matches any known section
+                        if (term.includes('home')) {
+                            this.scrollToSection('home');
+                        } else if (term.includes('about')) {
+                            this.scrollToSection('about');
+                        } else if (term.includes('projects')) {
+                            this.scrollToSection('projects');
+                        } else if (term.includes('contact')) {
+                            this.scrollToSection('contact');
+                        } else {
+                            console.log(`No match found for: ${term}`);
+                            alert('No matching section found.');
+                        }
+                    } else {
+                        console.log('Please enter a search term');
+                    }
+                }
             }
         });
     </script>
-
 </body>
 </html>

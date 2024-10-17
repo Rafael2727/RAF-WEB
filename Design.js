@@ -35,10 +35,11 @@ searchBtn.addEventListener('click', () => {
     // Handle search button click
     const searchTerm = searchInput.value.trim();
     if (searchTerm) {
-        console.log(`Searching for: ${searchTerm}`);
+        console.log(`Searching for: ${About}`);
         // You can add your search logic here
     } else {
         console.log('Please enter a search term');
     }
+   
 });
 

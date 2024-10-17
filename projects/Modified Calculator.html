@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILY CALC</title>
+    <link rel="stylesheet" href="style.css>
+</head>
+<body>
+    
+    
+    <div class="calculator">
+        <div id="display"></div>
+        <div class="buttons">
+            <button onclick="input('1')">1</button>
+            <button onclick="input('2')">2</button>
+            <button onclick="input('3')">3</button>
+            <button onclick="input('+')">+</button>
+            <button onclick="input('4')">4</button>
+            <button onclick="input('5')">5</button>
+            <button onclick="input('6')">6</button>
+            <button onclick="input('-')">-</button>
+            <button onclick="input('7')">7</button>
+            <button onclick="input('8')">8</button>
+            <button onclick="input('9')">9</button>
+            <button onclick="input('*')">*</button>
+            <button onclick="input('0')">0</button>
+            <button onclick="input('/')">/</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="clearDisplay()">C</button>
+        </div>
+    </div>
+    <style>
+        .calculator {
+    width: 200px;
+  
+    margin: auto;
+    padding: 20px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px #aaa;
+  }
+  
+  #display {
+    background-color: #fff;
+    font-size: 24px;
+    height: 50px;
+    
+    text-align: right;
+    padding: 10px;
+    border: 2px solid hsla(191, 54%, 31%, 0.386);
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background-image: url(istockphoto-463416797-612x612.jpg);
+    background-position: center;
+    font-family: 'Times New Roman';
+  
+}
+  
+  button {
+    background-color: #2d8f8f;
+    border: none;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #33cae1;
+  }
+  
+    </style>
+    <script>
+let expression = '';
+let messages = [
+  "Kupal kaba boss?",
+  "Baka naman boss hehe",
+  "palambing",
+ 
+];
+let messageIndex = 0;
+
+function input(value) {
+  expression += value;
+  document.getElementById('display').innerText = expression;
+}
+
+function calculate() {
+  // Display a new message from the messages array each time
+  document.getElementById('display').innerText = messages[messageIndex];
+  
+  // Increment the message index, and reset to 0 if it exceeds the array length
+  messageIndex = (messageIndex + 1) % messages.length;
+}
+
+function clearDisplay() {
+  expression = '';
+  document.getElementById('display').innerText = '';
+}
+
+
+    </script>
+</body>
+</html>
+  

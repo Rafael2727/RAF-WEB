@@ -52,7 +52,62 @@
     padding: 0;
     display: flex;
   }
-  
+  h2{
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 7px;
+    background-color: rgb(242, 171, 5);
+  }
+  p{
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fcf9f9;
+    background-color: #440c7c;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .menu{
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fcf9f9;
+    background-color: #1d6a0c;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .logo{
+    margin-bottom: 20px;
+    font-family: Times New Roman;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fcf9f9;
+    background-color: #1d6a0c;
+    padding: 10px;
+    border-radius: 10px;
+  }
+ .a img{
+  size: 5px;
+ }
+ .social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 20px; /* Smaller icon size */
+  color: #000;
+}
+.social-links img {
+  width: 24px;  /* Normal size for icons */
+  height: 24px; /* Same here to maintain aspect ratio */
+  margin: 0 10px; /* Adds space between the icons */
+}
+.social-links a:hover {
+  color: #228b3e;
+}
   .menu li {
     margin-right: 20px;
   }
@@ -63,7 +118,7 @@
   }
   
   .menu a:hover {
-    color: #ccc;
+    color: #1c0b0b;
   }
   
   .search {
@@ -82,7 +137,7 @@
     border: none;
     border-radius: 5px;
     background-color: #333;
-    color: #fff;
+    color: #ffffff;
     cursor: pointer;
   }
   
@@ -108,7 +163,7 @@
   }
   
   .cn:hover {
-    background-color: #444;
+    background-color: #186770;
   }
   
   .container {
@@ -239,4 +294,5 @@
     .text {
       font-size: 24px;
     }
+    
   }
